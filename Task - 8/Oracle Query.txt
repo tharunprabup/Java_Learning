@@ -1,0 +1,9 @@
+---159. List the dept 10 emps whose Sal is more than Allen Salary.
+select * from emp where deptno=10 and sal >(select sal from emp where ename='ALLEN');
+
+---160. List the Managers who are senior to king & who are junior to Smith.
+select * from emp where JOB='MANAGER' and hiredate between(select Hiredate from emp where ename='SMITH') and (select Hiredate from emp where ename='KING') ;
+
+
+---161. List the Empno, Ename, loc, Sal, Dname of all emps belongs to king dept
+select Empno,Ename, loc, Sal, Dname from emp join dept using(deptno) where deptno in (select Deptno from emp where ename='KING') ;
