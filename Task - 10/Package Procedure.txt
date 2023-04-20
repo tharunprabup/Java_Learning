@@ -43,5 +43,6 @@ end emppack;
  
 
 execute emppack.UPD_SAL('SALESMAN',1550,1590);
+select emppack.GET_SERVICE_YRS(7369)from dual;
 
 select * from emp1 where JOB='SALESMAN'
